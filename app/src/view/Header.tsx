@@ -20,7 +20,7 @@ const Header = (): JSX.Element => {
   return (
     <AppBar position="static" className={classes.bar}>
       <Typography variant="h6" className={classes.title}>
-        Todo App
+        Counter App
       </Typography>
     </AppBar>
   )
