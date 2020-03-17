@@ -10,7 +10,7 @@ Starter for *Todo* app on *React* in *TypeScript*that follows *Clean Architectur
 - react
 - starter
 - template
-- todo
+- counter
 - typescript
 
 ---
