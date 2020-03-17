@@ -12,7 +12,7 @@ UNDER DEVELOPMENT
 - react
 - starter
 - template
-- counter
+- counter-app
 - typescript
 
 ---
