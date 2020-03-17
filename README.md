@@ -25,9 +25,9 @@ UNDER DEVELOPMENT
 
 [Kentaro Matsushita's *clean-architecture-todo-example*](https://github.com/kentaro-m/clean-architecture-todo-example)
 
-# Clean Architecture Todo Example
+# Clean Architecture Counter Example
 
-![](./demo.png)
+TBD
 
 ## Feature
 - Add a task
