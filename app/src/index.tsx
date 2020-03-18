@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker'
 import { ThemeProvider } from 'styled-components'
 import { createMuiTheme } from '@material-ui/core/styles'
 import { CssBaseline, colors } from '@material-ui/core'
-import { TodoItemServiceImpl } from './usecase/TodoItemServiceImpl'
+import { CounterServiceImpl } from './usecase/CounterServiceImpl'
 import { RestClientImpl } from './adapter/RestClientImpl'
 
 const theme = createMuiTheme({
@@ -27,10 +27,10 @@ const theme = createMuiTheme({
 })
 
 const restClient = new RestClientImpl('http://localhost:3001')
-const todoUseCase = new TodoItemServiceImpl(restClient)
+const todoUseCase = new CounterServiceImpl(restClient)
 
 interface IContextProps {
-  useCase: TodoItemServiceImpl
+  useCase: CounterServiceImpl
 }
 
 export const AppContext = createContext({} as IContextProps)

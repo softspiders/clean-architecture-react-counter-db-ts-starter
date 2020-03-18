@@ -2,7 +2,7 @@ import { TodoItem } from '../entity/TodoItem'
 import { TodoItemService } from './TodoItemService'
 import { RestClient } from '../adapter/RestClient'
 
-export class TodoItemServiceImpl implements TodoItemService {
+export class CounterServiceImpl implements TodoItemService {
   client: RestClient
 
   constructor(client: RestClient) {

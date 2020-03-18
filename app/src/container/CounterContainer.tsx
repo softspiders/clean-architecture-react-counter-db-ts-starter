@@ -1,12 +1,12 @@
 import React, { useState, useCallback, useEffect } from 'react'
 import { TodoItem } from '../entity/TodoItem'
-import { TodoItemServiceImpl } from '../usecase/TodoItemServiceImpl'
+import { CounterServiceImpl } from '../usecase/CounterServiceImpl'
 
-interface TodoContainerProps {
-  useCase: TodoItemServiceImpl
+interface CounterContainerProps {
+  useCase: CounterServiceImpl
 }
 
-const CounterContainer = ({ useCase }: TodoContainerProps) => {
+const CounterContainer = ({ useCase }: CounterContainerProps) => {
   const [todoItems, setTodoItems] = useState<TodoItem[] | null>(null)
   const [todoTitle, setTodoTitle] = useState<string>('')
 
