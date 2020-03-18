@@ -7,7 +7,8 @@ import {
   IconButton,
   Checkbox,
   ListItemIcon,
-  TextField
+  TextField,
+  Button
 } from '@material-ui/core'
 import { Delete } from '@material-ui/icons'
 import { TodoItem } from '../entity/TodoItem'
@@ -40,6 +41,12 @@ const Todo = ({
       onKeyDown={onAddKeyDown}
       value={todoTitle}
     />
+    <Button variant="contained" color="secondary">
+      Decrement
+    </Button>
+    <Button variant="contained" color="primary">
+      Increment
+    </Button>
     <List component="nav">
       {todoItems &&
         todoItems.map(todoItem => {
