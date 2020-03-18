@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Layout, Counter } from '.'
+import { Counter } from '.'
 import counterContainer from '../container/CounterContainer'
 import { AppContext } from '../'
 
@@ -9,13 +9,9 @@ const App = (): JSX.Element => {
 
   return (
     <Counter
-    // todoItems={state.todoItems}
-    // todoTitle={state.todoTitle}
-    // onAddKeyDown={functions.handleAddKeyDown}
-    // onCompleteClick={functions.handleCompleteClick}
-    // onDeleteClick={functions.handleDeleteClick}
-    // onInputChange={functions.handleInputChange}
-    />
+      counter={state.counter}
+      onClick={functions.handleIncrementClick}
+    ></Counter>
   )
 }
 

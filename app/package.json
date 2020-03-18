@@ -1,5 +1,5 @@
 {
-  "name": "clean-architecture-react-ts-todo-starter",
+  "name": "clean-architecture-react-ts-counter-starter",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

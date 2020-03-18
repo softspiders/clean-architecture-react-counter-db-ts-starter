@@ -27,7 +27,7 @@ const theme = createMuiTheme({
 })
 
 const restClient = new RestClientImpl('http://localhost:3001')
-const todoUseCase = new CounterServiceImpl(restClient)
+const counterUseCase = new CounterServiceImpl(restClient)
 
 interface IContextProps {
   useCase: CounterServiceImpl
@@ -39,7 +39,7 @@ ReactDOM.render(
   <ThemeProvider theme={theme}>
     <React.Fragment>
       <CssBaseline />
-      <AppContext.Provider value={{ useCase: todoUseCase }}>
+      <AppContext.Provider value={{ useCase: counterUseCase }}>
         <App />
       </AppContext.Provider>
     </React.Fragment>

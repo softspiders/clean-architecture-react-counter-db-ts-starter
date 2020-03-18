@@ -1,5 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react'
-import { TodoItem } from '../entity/TodoItem'
+import { useState, useCallback, useEffect } from 'react'
 import { CounterServiceImpl } from '../usecase/CounterServiceImpl'
 
 interface CounterContainerProps {
@@ -7,14 +6,13 @@ interface CounterContainerProps {
 }
 
 const CounterContainer = ({ useCase }: CounterContainerProps) => {
-  const [todoItems, setTodoItems] = useState<TodoItem[] | null>(null)
-  const [todoTitle, setTodoTitle] = useState<string>('')
+  const [counter, setCounter] = useState<number | null>(null)
 
   useEffect(() => {
     ;(async (): Promise<void> => {
       try {
-        const todoListItems = await useCase.findAll()
-        setTodoItems(todoListItems)
+        const counter = await useCase.getCounter()
+        setCounter(counter)
       } catch (error) {
         // TODO: Add codes to handle errors
         console.log(error)
@@ -24,52 +22,11 @@ const CounterContainer = ({ useCase }: CounterContainerProps) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const handleInputChange = useCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => {
-      setTodoTitle(event.target.value)
-    },
-    []
-  )
-
-  const handleAddKeyDown = useCallback(
-    async (event: React.KeyboardEvent) => {
-      const ENTER_KEY_CODE = 13
-
-      if (event.keyCode === ENTER_KEY_CODE) {
-        try {
-          await useCase.create(todoTitle)
-          const todoListItems = await useCase.findAll()
-          setTodoItems(todoListItems)
-          setTodoTitle('')
-        } catch (error) {
-          // TODO: Add codes to handle errors
-          console.log(error)
-        }
-      }
-    },
-    [todoTitle] // eslint-disable-line react-hooks/exhaustive-deps
-  )
-
-  const handleDeleteClick = useCallback(
-    (id: number) => async (): Promise<void> => {
+  const handleIncrement = useCallback(
+    () => async (): Promise<void> => {
       try {
-        await useCase.delete(id)
-        const todoListItems = await useCase.findAll()
-        setTodoItems(todoListItems)
-      } catch (error) {
-        // TODO: Add codes to handle errors
-        console.log(error)
-      }
-    },
-    [] // eslint-disable-line react-hooks/exhaustive-deps
-  )
-
-  const handleCompleteClick = useCallback(
-    (id: number) => async (): Promise<void> => {
-      try {
-        await useCase.update(id)
-        const todoListItems = await useCase.findAll()
-        setTodoItems(todoListItems)
+        const counter = await useCase.increment()
+        setCounter(counter)
       } catch (error) {
         // TODO: Add codes to handle errors
         console.log(error)
@@ -80,14 +37,10 @@ const CounterContainer = ({ useCase }: CounterContainerProps) => {
 
   return {
     state: {
-      todoItems,
-      todoTitle
+      counter
     },
     functions: {
-      handleInputChange,
-      handleAddKeyDown,
-      handleCompleteClick,
-      handleDeleteClick
+      handleIncrementClick: handleIncrement
     }
   }
 }

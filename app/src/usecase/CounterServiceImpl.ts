@@ -1,44 +1,22 @@
-import { TodoItem } from '../entity/TodoItem'
-import { TodoItemService } from './TodoItemService'
+import { CounterService } from './CounterService'
 import { RestClient } from '../adapter/RestClient'
 
-export class CounterServiceImpl implements TodoItemService {
+export class CounterServiceImpl implements CounterService {
   client: RestClient
 
   constructor(client: RestClient) {
     this.client = client
   }
 
-  async findAll(): Promise<TodoItem[] | null> {
-    const todos: any = await this.client.getAllTodoItems()
+  async getCounter(): Promise<number | null> {
+    const counter: any = await this.client.increment()
 
-    const items = []
-
-    for (const todo of todos) {
-      items.push(TodoItem.fromJSON(todo))
-    }
-
-    return items
+    return counter
   }
 
-  async findByID(id: number): Promise<TodoItem | null> {
-    const todo: any = await this.client.getTodoItemByID(id)
-    return TodoItem.fromJSON(todo)
-  }
+  async increment(): Promise<number | null> {
+    const counter: any = await this.client.increment()
 
-  async create(title: string): Promise<void> {
-    await this.client.createTodoItem(title)
-  }
-
-  async update(id: number): Promise<void> {
-    const item = await this.findByID(id)
-
-    if (item) {
-      await this.client.updateTodoItemByID(id, item.title, !item.isCompleted)
-    }
-  }
-
-  async delete(id: number): Promise<void> {
-    await this.client.deleteTodoItemByID(id)
+    return counter
   }
 }
