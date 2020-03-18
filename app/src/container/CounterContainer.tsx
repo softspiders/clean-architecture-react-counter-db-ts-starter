@@ -6,7 +6,7 @@ interface TodoContainerProps {
   useCase: TodoItemServiceImpl
 }
 
-const TodoContainer = ({ useCase }: TodoContainerProps) => {
+const CounterContainer = ({ useCase }: TodoContainerProps) => {
   const [todoItems, setTodoItems] = useState<TodoItem[] | null>(null)
   const [todoTitle, setTodoTitle] = useState<string>('')
 
@@ -92,4 +92,4 @@ const TodoContainer = ({ useCase }: TodoContainerProps) => {
   }
 }
 
-export default TodoContainer
+export default CounterContainer

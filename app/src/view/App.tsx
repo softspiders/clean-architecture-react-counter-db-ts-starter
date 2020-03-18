@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
 import { Header, Layout, Counter } from '.'
-import todoContainer from '../container/TodoContainer'
+import counterContainer from '../container/CounterContainer'
 import { Container } from '@material-ui/core'
 import { AppContext } from '../'
 
 const App = (): JSX.Element => {
   const { useCase } = useContext(AppContext)
-  const { state, functions } = todoContainer({ useCase })
+  const { state, functions } = counterContainer({ useCase })
 
   return (
     <Layout>
