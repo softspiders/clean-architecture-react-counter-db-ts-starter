@@ -1,6 +1,6 @@
 import Header from './Header'
 import Layout from './Layout'
-import Todo from './Todo'
+import Counter from './Counter'
 import App from './App'
 
-export { Header, Layout, Todo, App }
+export { Header, Layout, Counter, App }
