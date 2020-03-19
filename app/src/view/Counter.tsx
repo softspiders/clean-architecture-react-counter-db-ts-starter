@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '@material-ui/core'
+import { Button, Typography } from '@material-ui/core'
 
 interface CounterProps {
   counter: number | null
@@ -7,9 +7,14 @@ interface CounterProps {
 }
 
 const Counter = ({ counter, onClick }: CounterProps): JSX.Element => (
-  <Button variant="contained" color="primary">
-    +
-  </Button>
+  <React.Fragment>
+    <Button variant="contained" color="primary">
+      +
+    </Button>
+    <Typography variant="subtitle2" component="caption">
+      Counter: {counter}
+    </Typography>
+  </React.Fragment>
 )
 
 export default Counter
