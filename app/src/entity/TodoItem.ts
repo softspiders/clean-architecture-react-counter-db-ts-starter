@@ -1,34 +1,20 @@
-type TodoItemJSON = {
-  id: number
-  title: string
-  isCompleted: boolean
+type CounterJSON = {
+  counter: number
 }
 
 export class TodoItem {
-  private readonly _id: number
-  private readonly _title: string
-  private readonly _isCompleted: boolean
+  private readonly _counter: number
 
-  constructor(id: number, title: string, isCompleted: boolean) {
-    this._id = id
-    this._title = title
-    this._isCompleted = isCompleted
+  constructor(counter: number) {
+    this._counter = counter
   }
 
-  get id(): number {
-    return this._id
+  get counter(): number {
+    return this._counter
   }
 
-  get title(): string {
-    return this._title
-  }
-
-  get isCompleted(): boolean {
-    return this._isCompleted
-  }
-
-  static fromJSON(json: TodoItemJSON): TodoItem {
-    const { id, title, isCompleted } = json
-    return new TodoItem(id, title, isCompleted)
+  static fromJSON(json: CounterJSON): TodoItem {
+    const { counter } = json
+    return new TodoItem(counter)
   }
 }
