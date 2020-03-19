@@ -1,12 +1,12 @@
 import React from 'react'
 import { Button } from '@material-ui/core'
 
-interface TodoProps {
+interface CounterProps {
   counter: number | null
   onClick: () => () => void
 }
 
-const Counter = ({ counter, onClick }: TodoProps): JSX.Element => (
+const Counter = ({ counter, onClick }: CounterProps): JSX.Element => (
   <React.Fragment>
     <Button variant="contained" color="secondary">
       Decrement
