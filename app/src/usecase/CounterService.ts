@@ -1,6 +1,6 @@
-import { TodoItem } from '../entity/TodoItem'
+import { CounterItem } from '../entity/CounterItem'
 
 export interface CounterService {
-  getCounter(): Promise<TodoItem | null>
-  increment(): Promise<TodoItem | null>
+  getCounter(): Promise<CounterItem | null>
+  increment(): Promise<CounterItem | null>
 }

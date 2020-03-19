@@ -1,6 +1,6 @@
 import { CounterService } from './CounterService'
 import { RestClient } from '../adapter/RestClient'
-import { TodoItem } from '../entity/TodoItem'
+import { CounterItem } from '../entity/CounterItem'
 
 export class CounterServiceImpl implements CounterService {
   client: RestClient
@@ -9,13 +9,13 @@ export class CounterServiceImpl implements CounterService {
     this.client = client
   }
 
-  async getCounter(): Promise<TodoItem | null> {
+  async getCounter(): Promise<CounterItem | null> {
     const counter: any = await this.client.increment()
 
     return counter
   }
 
-  async increment(): Promise<TodoItem | null> {
+  async increment(): Promise<CounterItem | null> {
     const counter: any = await this.client.increment()
 
     return counter

@@ -2,7 +2,7 @@ type CounterJSON = {
   counter: number
 }
 
-export class TodoItem {
+export class CounterItem {
   private readonly _counter: number
 
   constructor(counter: number) {
@@ -13,8 +13,8 @@ export class TodoItem {
     return this._counter
   }
 
-  static fromJSON(json: CounterJSON): TodoItem {
+  static fromJSON(json: CounterJSON): CounterItem {
     const { counter } = json
-    return new TodoItem(counter)
+    return new CounterItem(counter)
   }
 }
