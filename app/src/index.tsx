@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import { App } from './view'
 import * as serviceWorker from './serviceWorker'
-import { CssBaseline, colors } from '@material-ui/core'
 import { CounterServiceImpl } from './usecase/CounterServiceImpl'
 import { RestClientImpl } from './adapter/RestClientImpl'
 
@@ -18,7 +17,6 @@ export const AppContext = createContext({} as IContextProps)
 
 ReactDOM.render(
   <React.Fragment>
-    <CssBaseline />
     <AppContext.Provider value={{ useCase: counterUseCase }}>
       <App />
     </AppContext.Provider>
