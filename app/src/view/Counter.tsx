@@ -6,12 +6,12 @@ interface CounterProps {
   onClick: () => () => void
 }
 
-const Counter = ({ counter, onClick }: CounterProps): JSX.Element => (
+const Counter = ({ counter = 0, onClick }: CounterProps): JSX.Element => (
   <React.Fragment>
     <Button variant="contained" color="primary">
       +
     </Button>
-    <Typography variant="subtitle2" component="caption">
+    <Typography variant="h5" component="abbr">
       Counter: {counter}
     </Typography>
   </React.Fragment>
