@@ -11,8 +11,8 @@ const Counter = ({ counter = 0, onClick }: CounterProps): JSX.Element => (
     <Button variant="contained" color="primary">
       +
     </Button>
-    <Typography variant="h5" component="abbr">
-      Counter: {counter}
+    <Typography variant="h4" component="abbr">
+      {counter}
     </Typography>
   </React.Fragment>
 )
