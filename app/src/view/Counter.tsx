@@ -6,10 +6,10 @@ interface CounterProps {
 }
 
 const Counter = ({ counter = 0, onClick }: CounterProps): JSX.Element => (
-  <React.Fragment>
-    <button onClick={onClick}>+</button>
-    <label>{counter}</label>
-  </React.Fragment>
+  <div>
+    <div>{counter}</div>
+    <button onClick={onClick}>Click</button>
+  </div>
 )
 
 export default Counter
