@@ -8,12 +8,8 @@ interface CounterProps {
 
 const Counter = ({ counter = 0, onClick }: CounterProps): JSX.Element => (
   <React.Fragment>
-    <Button variant="contained" color="primary">
-      +
-    </Button>
-    <Typography variant="h4" component="abbr">
-      {counter}
-    </Typography>
+    <button onClick={onClick}>+</button>
+    <label>{counter}</label>
   </React.Fragment>
 )
 

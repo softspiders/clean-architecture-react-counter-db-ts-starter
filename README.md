@@ -8,7 +8,6 @@ UNDER DEVELOPMENT
 ## Feature tags
 
 - clean-architecture
-- material-ui
 - react
 - starter
 - template
