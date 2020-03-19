@@ -1,5 +1,4 @@
 import React from 'react'
-import { Button, Typography } from '@material-ui/core'
 
 interface CounterProps {
   counter: number | null
