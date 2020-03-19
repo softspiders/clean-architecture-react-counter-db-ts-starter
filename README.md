@@ -1,6 +1,6 @@
 [SOFTSPIDERS](https://github.com/softspiders/softspiders)
 
-# clean-architecture-react-ts-counter-starter
+# clean-architecture-react-counter-ts-starter
 Starter for *Counter* app on *React* in *TypeScript*that follows *Clean Architecture* principle
 
 UNDER DEVELOPMENT
@@ -8,10 +8,11 @@ UNDER DEVELOPMENT
 ## Feature tags
 
 - clean-architecture
+- counter-app
 - react
+- rest
 - starter
 - template
-- counter-app
 - typescript
 
 ---
