@@ -14,7 +14,6 @@ const CounterContainer = ({ useCase }: CounterContainerProps) => {
         const counterItem = await useCase.getCounter()
         setCounter(counterItem.counter)
       } catch (error) {
-        // TODO: Add codes to handle errors
         console.log(error)
       }
     })()
@@ -27,7 +26,6 @@ const CounterContainer = ({ useCase }: CounterContainerProps) => {
       const counterItem = await useCase.increment()
       setCounter(counterItem ? counterItem.counter : null) // TODO rewrite
     } catch (error) {
-      // TODO: Add codes to handle errors
       console.log(error)
     }
   }, []) // eslint-disable-line react-hooks/exhaustive-deps

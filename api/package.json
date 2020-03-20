@@ -9,6 +9,6 @@
   "author": "Alexander Lapygin",
   "license": "MIT",
   "dependencies": {
-    "json-server": "^0.15.1"
+    "json-server": "^0.16.1"
   }
 }

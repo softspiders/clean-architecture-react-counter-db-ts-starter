@@ -20,7 +20,6 @@ export class RestClientImpl implements RestClient {
         return response.json()
       }
     } catch (error) {
-      // TODO: Add error handling
       throw error
     }
   }
@@ -42,7 +41,6 @@ export class RestClientImpl implements RestClient {
         return response.json()
       }
     } catch (error) {
-      // TODO: Add error handling
       throw error
     }
   }
