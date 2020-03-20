@@ -11,14 +11,7 @@ export class CounterServiceImpl implements CounterService {
 
   async getCounter(): Promise<CounterItem> {
     const counters: any = await this.client.getCounter()
-
-    const items = []
-
-    for (const counter of counters) {
-      items.push(CounterItem.fromJSON(counter))
-    }
-
-    return items[0]
+    return CounterItem.fromJSON(counters[0])
   }
 
   async increment(): Promise<CounterItem | null> {
