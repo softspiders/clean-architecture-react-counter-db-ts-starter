@@ -5,6 +5,8 @@ Starter for *Counter* app on *React* in *TypeScript*that follows *Clean Architec
 
 UNDER DEVELOPMENT
 
+---
+
 ## Feature tags
 
 - clean-architecture
@@ -26,6 +28,8 @@ UNDER DEVELOPMENT
 [Kentaro Matsushita's *clean-architecture-todo-example*](https://github.com/kentaro-m/clean-architecture-todo-example)
 
 # Clean Architecture Counter Example
+
+---
 
 TBD
 
