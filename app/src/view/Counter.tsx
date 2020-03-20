@@ -2,7 +2,7 @@ import React from 'react'
 
 interface CounterProps {
   counter: number | null
-  onClick: () => () => void
+  onClick: () => void
 }
 
 const Counter = ({ counter = 0, onClick }: CounterProps): JSX.Element => (
