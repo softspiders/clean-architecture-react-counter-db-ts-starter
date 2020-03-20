@@ -17,10 +17,7 @@ export class CounterItem {
   }
 
   static fromJSON(json: CounterJSON): CounterItem {
-    console.log('CounterItem: json = ' + JSON.stringify(json))
     const { counter, id } = json
-    console.log('CounterItem: id = ' + id)
-    console.log('CounterItem: counter = ' + counter)
     return new CounterItem(id, counter)
   }
 }

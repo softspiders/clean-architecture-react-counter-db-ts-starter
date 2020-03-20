@@ -12,7 +12,7 @@ const CounterContainer = ({ useCase }: CounterContainerProps) => {
     ;(async (): Promise<void> => {
       try {
         const counterItem = await useCase.getCounter()
-        setCounter(counterItem ? counterItem.counter : null) // TODO rewrite
+        setCounter(counterItem.counter)
       } catch (error) {
         // TODO: Add codes to handle errors
         console.log(error)
