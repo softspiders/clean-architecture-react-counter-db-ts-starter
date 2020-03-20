@@ -10,6 +10,7 @@ const CounterContainer = ({ useCase }: CounterContainerProps) => {
 
   useEffect(() => {
     ;(async (): Promise<void> => {
+      console.log('CounterContainer.useEffect() BEGIN')
       try {
         const counterItem = await useCase.getCounter()
         setCounter(counterItem ? counterItem.counter : null) // TODO rewrite
@@ -17,6 +18,7 @@ const CounterContainer = ({ useCase }: CounterContainerProps) => {
         // TODO: Add codes to handle errors
         console.log(error)
       }
+      console.log('CounterContainer.useEffect() END')
     })()
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -24,6 +26,7 @@ const CounterContainer = ({ useCase }: CounterContainerProps) => {
 
   const handleIncrement = useCallback(
     () => async (): Promise<void> => {
+      console.log('CounterContainer.handleIncrement() BEGIN')
       try {
         const counterItem = await useCase.increment()
         setCounter(counterItem ? counterItem.counter : null) // TODO rewrite
@@ -31,6 +34,7 @@ const CounterContainer = ({ useCase }: CounterContainerProps) => {
         // TODO: Add codes to handle errors
         console.log(error)
       }
+      console.log('CounterContainer.handleIncrement() END')
     },
     [] // eslint-disable-line react-hooks/exhaustive-deps
   )
