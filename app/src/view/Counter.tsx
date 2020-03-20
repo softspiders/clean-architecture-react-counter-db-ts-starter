@@ -5,7 +5,7 @@ interface CounterProps {
   onClick: () => void
 }
 
-const Counter = ({ counter = 0, onClick }: CounterProps): JSX.Element => (
+const Counter = ({ counter, onClick }: CounterProps): JSX.Element => (
   <div>
     <div>{counter}</div>
     <button onClick={onClick}>Click</button>

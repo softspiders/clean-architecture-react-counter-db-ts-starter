@@ -1,6 +1,8 @@
-type CounterJSON = {
-  counter: number
-}
+type CounterJSON = [
+  {
+    counter: number
+  }
+]
 
 export class CounterItem {
   private readonly _counter: number
@@ -14,7 +16,7 @@ export class CounterItem {
   }
 
   static fromJSON(json: CounterJSON): CounterItem {
-    const { counter } = json
+    const [{ counter }] = json
     return new CounterItem(counter)
   }
 }
