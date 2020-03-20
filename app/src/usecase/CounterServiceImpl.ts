@@ -9,13 +9,24 @@ export class CounterServiceImpl implements CounterService {
     this.client = client
   }
 
-  async getCounter(): Promise<CounterItem | null> {
-    const counterItem: any = await this.client.getCounter()
-    return CounterItem.fromJSON(counterItem)
+  async getCounter(): Promise<CounterItem> {
+    const counters: any = await this.client.getCounter()
+
+    const items = []
+
+    for (const counter of counters) {
+      items.push(CounterItem.fromJSON(counter))
+    }
+
+    return items[0]
   }
 
   async increment(): Promise<CounterItem | null> {
-    const counterItem: any = await this.client.increment()
+    const currentCounterItem = await this.getCounter()
+    const counterItem: any = await this.client.updateCounter(
+      currentCounterItem.counter + 1
+    )
+
     return CounterItem.fromJSON(counterItem)
   }
 }

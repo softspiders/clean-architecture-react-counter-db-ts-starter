@@ -25,10 +25,18 @@ export class RestClientImpl implements RestClient {
     }
   }
 
-  public async increment(): Promise<Response | undefined> {
+  public async updateCounter(counter: number): Promise<Response | undefined> {
     // eslint-disable-next-line no-useless-catch
     try {
-      const response = await this.client(this._createUrl('/counter'))
+      const response = await this.client(this._createUrl(`/counter/1`), {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          counter
+        })
+      })
 
       if (response.ok) {
         return response.json()

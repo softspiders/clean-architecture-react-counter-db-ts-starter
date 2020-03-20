@@ -1,13 +1,14 @@
-type CounterJSON = [
-  {
-    counter: number
-  }
-]
+type CounterJSON = {
+  id: number
+  counter: number
+}
 
 export class CounterItem {
+  private readonly _id: number
   private readonly _counter: number
 
-  constructor(counter: number) {
+  constructor(id: number, counter: number) {
+    this._id = id
     this._counter = counter
   }
 
@@ -16,7 +17,10 @@ export class CounterItem {
   }
 
   static fromJSON(json: CounterJSON): CounterItem {
-    const [{ counter }] = json
-    return new CounterItem(counter)
+    console.log('CounterItem: json = ' + JSON.stringify(json))
+    const { counter, id } = json
+    console.log('CounterItem: id = ' + id)
+    console.log('CounterItem: counter = ' + counter)
+    return new CounterItem(id, counter)
   }
 }
