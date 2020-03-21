@@ -1,11 +1,11 @@
 import { CounterService } from './CounterService'
-import { RestClient } from '../adapter/RestClient'
+import { CounterServiceOutput } from './CounterServiceOutput'
 import { CounterItem } from '../entity/CounterItem'
 
 export class CounterServiceImpl implements CounterService {
-  client: RestClient
+  client: CounterServiceOutput
 
-  constructor(client: RestClient) {
+  constructor(client: CounterServiceOutput) {
     this.client = client
   }
 
