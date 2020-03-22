@@ -14,7 +14,7 @@ export class CounterServiceImpl implements CounterService {
     return CounterItem.fromJSON(counters[0])
   }
 
-  async increment(): Promise<CounterItem | null> {
+  async increment(): Promise<CounterItem> {
     const currentCounterItem = await this.getCounter()
     const counterItem: any = await this.client.updateCounter(
       currentCounterItem.counter + 1
