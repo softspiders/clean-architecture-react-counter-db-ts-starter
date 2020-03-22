@@ -11,7 +11,7 @@ export class CounterOutputRestAdapter implements CounterOutput {
     this.client = fetch
   }
 
-  public async getCounter(): Promise<Response | undefined> {
+  public async getCounter(): Promise<number | undefined> {
     // eslint-disable-next-line no-useless-catch
     try {
       const response = await this.client(this._createUrl('/counter'))
@@ -24,7 +24,7 @@ export class CounterOutputRestAdapter implements CounterOutput {
     }
   }
 
-  public async updateCounter(counter: number): Promise<Response | undefined> {
+  public async updateCounter(counter: number): Promise<number | undefined> {
     // eslint-disable-next-line no-useless-catch
     try {
       const response = await this.client(this._createUrl(`/counter/1`), {
