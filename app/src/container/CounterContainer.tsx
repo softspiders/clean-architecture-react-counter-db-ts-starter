@@ -6,13 +6,13 @@ interface CounterContainerProps {
 }
 
 const CounterContainer = ({ useCase }: CounterContainerProps) => {
-  const [counter, setCounter] = useState<number | null>(null)
+  const [counter, setCounter] = useState<number>(1)
 
   useEffect(() => {
     ;(async (): Promise<void> => {
       try {
-        const counterItem = await useCase.getCounter()
-        setCounter(counterItem.counter)
+        const newCounter = await useCase.getCounter()
+        setCounter(newCounter)
       } catch (error) {
         console.log(error)
       }

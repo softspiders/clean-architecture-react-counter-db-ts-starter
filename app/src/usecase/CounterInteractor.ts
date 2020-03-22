@@ -9,16 +9,15 @@ export class CounterInteractor implements CounterInput {
     this.client = client
   }
 
-  async getCounter(): Promise<CounterItem> {
-    const counters: any = await this.client.getCounter()
-    return CounterItem.fromJSON(counters[0])
+  async getCounter(): Promise<number> {
+    const counter: number = await this.client.getCounter()
+    console.log('CounterInteractor.getCounter(): counter = ' + counter)
+    return counter
   }
 
   async increment(): Promise<CounterItem> {
-    const currentCounterItem = await this.getCounter()
-    const counterItem: any = await this.client.updateCounter(
-      currentCounterItem.counter + 1
-    )
+    const currentCounter: number = await this.getCounter()
+    const counterItem: any = await this.client.updateCounter(currentCounter + 1)
 
     return CounterItem.fromJSON(counterItem)
   }
