@@ -1,6 +1,16 @@
 import fetch from 'unfetch'
 import { CounterOutput } from '../usecase/CounterOutput'
 
+export class CounterJSON {
+  counter!: number
+  id!: number
+
+  constructor(counterResponse: any) {
+    this.counter = counterResponse.counter
+    this.id = counterResponse.id
+  }
+}
+
 export class CounterOutputRestAdapter implements CounterOutput {
   endpoint: string
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -18,7 +28,8 @@ export class CounterOutputRestAdapter implements CounterOutput {
 
       if (response.ok) {
         const json = await response.json()
-        return json[0].counter
+        const result: CounterJSON = new CounterJSON(json[0])
+        return result.counter
       }
       throw new Error(response.statusText)
     } catch (error) {
@@ -35,12 +46,14 @@ export class CounterOutputRestAdapter implements CounterOutput {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          counter
+          counter,
+          id: 1
         })
       })
 
       if (response.ok) {
-        return response.json()
+        const json = await response.json()
+        return json.counter
       }
       throw new Error(response.statusText)
     } catch (error) {

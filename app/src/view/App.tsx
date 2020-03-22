@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Counter } from '.'
+import { CounterView } from '.'
 import counterContainer from '../container/CounterContainer'
 import { AppContext } from '../'
 
@@ -8,7 +8,10 @@ const App = (): JSX.Element => {
   const { state, functions } = counterContainer({ useCase })
 
   return (
-    <Counter counter={state.counter} onClick={functions.handleIncrementClick} />
+    <CounterView
+      counter={state.counter}
+      onClick={functions.handleIncrementClick}
+    />
   )
 }
 

@@ -27,7 +27,7 @@ UNDER DEVELOPMENT
 
 [Kentaro Matsushita's *clean-architecture-todo-example*](https://github.com/kentaro-m/clean-architecture-todo-example)
 
-# Clean Architecture Counter Example
+# Clean Architecture CounterView Example
 
 ---
 

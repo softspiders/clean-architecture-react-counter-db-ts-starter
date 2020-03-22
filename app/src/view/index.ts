@@ -1,4 +1,4 @@
-import Counter from './Counter'
+import CounterView from './CounterView'
 import App from './App'
 
-export { Counter, App }
+export { CounterView, App }

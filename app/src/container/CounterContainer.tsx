@@ -11,7 +11,7 @@ const CounterContainer = ({ useCase }: CounterContainerProps) => {
   useEffect(() => {
     ;(async (): Promise<void> => {
       try {
-        const newCounter = await useCase.getCounter()
+        const newCounter: number = await useCase.getCounter()
         setCounter(newCounter)
       } catch (error) {
         console.log(error)
@@ -23,8 +23,8 @@ const CounterContainer = ({ useCase }: CounterContainerProps) => {
 
   const handleIncrement = useCallback(async (): Promise<void> => {
     try {
-      const counterItem = await useCase.increment()
-      setCounter(counterItem.counter)
+      const newCounter: number = await useCase.increment()
+      setCounter(newCounter)
     } catch (error) {
       console.log(error)
     }

@@ -1,6 +1,5 @@
 import { CounterInput } from './CounterInput'
 import { CounterOutput } from './CounterOutput'
-import { CounterItem } from '../entity/CounterItem'
 
 export class CounterInteractor implements CounterInput {
   client: CounterOutput
@@ -10,15 +9,11 @@ export class CounterInteractor implements CounterInput {
   }
 
   async getCounter(): Promise<number> {
-    const counter: number = await this.client.getCounter()
-    console.log('CounterInteractor.getCounter(): counter = ' + counter)
-    return counter
+    return await this.client.getCounter()
   }
 
-  async increment(): Promise<CounterItem> {
+  async increment(): Promise<number> {
     const currentCounter: number = await this.getCounter()
-    const counterItem: any = await this.client.updateCounter(currentCounter + 1)
-
-    return CounterItem.fromJSON(counterItem)
+    return await this.client.updateCounter(currentCounter + 1)
   }
 }
