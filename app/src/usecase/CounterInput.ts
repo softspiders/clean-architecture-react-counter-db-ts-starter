@@ -1,6 +1,6 @@
 import { CounterItem } from '../entity/CounterItem'
 
-export interface CounterService {
+export interface CounterInput {
   getCounter(): Promise<CounterItem | null>
   increment(): Promise<CounterItem | null>
 }

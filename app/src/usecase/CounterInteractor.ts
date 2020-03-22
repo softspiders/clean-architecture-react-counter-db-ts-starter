@@ -1,11 +1,11 @@
-import { CounterService } from './CounterService'
-import { CounterServiceOutput } from './CounterServiceOutput'
+import { CounterInput } from './CounterInput'
+import { CounterOutput } from './CounterOutput'
 import { CounterItem } from '../entity/CounterItem'
 
-export class CounterServiceImpl implements CounterService {
-  client: CounterServiceOutput
+export class CounterInteractor implements CounterInput {
+  client: CounterOutput
 
-  constructor(client: CounterServiceOutput) {
+  constructor(client: CounterOutput) {
     this.client = client
   }
 

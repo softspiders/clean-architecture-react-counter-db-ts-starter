@@ -1,7 +1,7 @@
 import fetch from 'unfetch'
-import { CounterServiceOutput } from '../usecase/CounterServiceOutput'
+import { CounterOutput } from '../usecase/CounterOutput'
 
-export class RestClientImpl implements CounterServiceOutput {
+export class CounterOutputRestAdapter implements CounterOutput {
   endpoint: string
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   client: any

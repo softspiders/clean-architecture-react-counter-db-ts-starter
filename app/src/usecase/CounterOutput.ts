@@ -1,4 +1,4 @@
-export interface CounterServiceOutput {
+export interface CounterOutput {
   getCounter(): Promise<Response | undefined>
   updateCounter(counter: number): Promise<Response | undefined>
 }

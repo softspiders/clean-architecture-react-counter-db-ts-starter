@@ -1,8 +1,8 @@
 import { useState, useCallback, useEffect } from 'react'
-import { CounterServiceImpl } from '../usecase/CounterServiceImpl'
+import { CounterInteractor } from '../usecase/CounterInteractor'
 
 interface CounterContainerProps {
-  useCase: CounterServiceImpl
+  useCase: CounterInteractor
 }
 
 const CounterContainer = ({ useCase }: CounterContainerProps) => {
