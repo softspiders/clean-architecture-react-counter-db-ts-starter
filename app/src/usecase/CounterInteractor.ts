@@ -1,5 +1,9 @@
 import { CounterInput } from './CounterInput'
-import { CounterOutput } from './CounterOutput'
+
+export interface CounterOutput {
+  getCounter(): Promise<number>
+  updateCounter(counter: number): Promise<number>
+}
 
 export class CounterInteractor implements CounterInput {
   client: CounterOutput
