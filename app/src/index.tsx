@@ -1,10 +1,10 @@
 import React, { createContext } from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import { App } from './react/view'
 import * as serviceWorker from './serviceWorker'
-import { CounterInteractor } from './usecase/CounterInteractor'
-import { CounterOutputRestAdapter } from './adapter/CounterOutputRestAdapter'
+import { CounterOutputRestAdapter } from './adapter'
+import { CounterInteractor } from './usecase'
+import App from './react/view/App'
 
 const restClient = new CounterOutputRestAdapter('http://localhost:3001')
 const counterUseCase = new CounterInteractor(restClient)

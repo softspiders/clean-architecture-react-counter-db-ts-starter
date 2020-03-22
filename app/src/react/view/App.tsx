@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
-import { CounterView } from './index'
 import counterContainer from '../container/CounterContainer'
 import { AppContext } from '../../index'
+import CounterView from './CounterView'
 
 const App = (): JSX.Element => {
   const { useCase } = useContext(AppContext)

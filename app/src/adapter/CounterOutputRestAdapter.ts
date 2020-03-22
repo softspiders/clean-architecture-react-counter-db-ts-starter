@@ -1,5 +1,5 @@
 import fetch from 'unfetch'
-import { CounterOutput } from '../usecase/CounterInteractor'
+import { CounterOutput } from '../usecase'
 
 export class CounterJSON {
   counter!: number
