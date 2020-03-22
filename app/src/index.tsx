@@ -1,7 +1,7 @@
 import React, { createContext } from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import { App } from './view'
+import { App } from './react/view'
 import * as serviceWorker from './serviceWorker'
 import { CounterInteractor } from './usecase/CounterInteractor'
 import { CounterOutputRestAdapter } from './adapter/CounterOutputRestAdapter'
