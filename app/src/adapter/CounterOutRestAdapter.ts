@@ -1,8 +1,8 @@
 import fetch from 'unfetch'
-import { CounterService } from '../usecase'
+import { CounterOut } from '../usecase'
 import { Counter } from '../entity'
 
-export class CounterServiceRestAdapter implements CounterService {
+export class CounterOutRestAdapter implements CounterOut {
   endpoint: string
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   client: any

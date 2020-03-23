@@ -1,1 +1,1 @@
-export * from './CounterServiceRestAdapter'
+export * from './CounterOutRestAdapter'

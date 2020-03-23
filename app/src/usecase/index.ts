@@ -1,2 +1,2 @@
-export * from './CounterInput'
+export * from './CounterIn'
 export * from './CounterInteractor'
