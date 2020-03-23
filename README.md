@@ -25,7 +25,7 @@ UNDER DEVELOPMENT
 
 ---
 
-# Clean Architecture CounterView Example
+# Clean Architecture on Counter App Example
 
 TBD
 
