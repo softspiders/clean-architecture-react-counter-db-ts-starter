@@ -19,7 +19,7 @@ export class CounterServiceRestAdapter implements CounterService {
 
       if (response.ok) {
         const json = await response.json()
-        return new Counter(json[0].id, json[0].counter)
+        return new Counter(json[0].counter)
       }
       throw new Error(response.statusText)
     } catch (error) {
@@ -43,7 +43,7 @@ export class CounterServiceRestAdapter implements CounterService {
 
       if (response.ok) {
         const json = await response.json()
-        return new Counter(json.id, json.counter)
+        return new Counter(json.counter)
       }
       throw new Error(response.statusText)
     } catch (error) {

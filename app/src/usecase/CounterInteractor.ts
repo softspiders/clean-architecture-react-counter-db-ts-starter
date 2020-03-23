@@ -20,7 +20,7 @@ export class CounterInteractor implements CounterInput {
 
   async increment(): Promise<number> {
     const currentCounter: Counter = await this.counterService.getCounter()
-    const newCounter: Counter = new Counter(1, currentCounter.counter + 1)
+    const newCounter: Counter = new Counter(currentCounter.counter + 1)
     const resultCounter: Counter = await this.counterService.updateCounter(
       newCounter
     )
