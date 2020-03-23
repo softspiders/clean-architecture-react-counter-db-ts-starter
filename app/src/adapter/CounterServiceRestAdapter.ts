@@ -1,17 +1,8 @@
 import fetch from 'unfetch'
-import { CounterOutput } from '../usecase'
+import { CounterService } from '../usecase'
+import { Counter } from '../entity'
 
-export class CounterJSON {
-  counter!: number
-  id!: number
-
-  constructor(counterResponse: any) {
-    this.counter = counterResponse.counter
-    this.id = counterResponse.id
-  }
-}
-
-export class CounterOutputRestAdapter implements CounterOutput {
+export class CounterServiceRestAdapter implements CounterService {
   endpoint: string
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   client: any
@@ -21,15 +12,14 @@ export class CounterOutputRestAdapter implements CounterOutput {
     this.client = fetch
   }
 
-  public async getCounter(): Promise<number> {
+  public async getCounter(): Promise<Counter> {
     // eslint-disable-next-line no-useless-catch
     try {
       const response = await this.client(this._createUrl('/counter'))
 
       if (response.ok) {
         const json = await response.json()
-        const result: CounterJSON = new CounterJSON(json[0])
-        return result.counter
+        return new Counter(json[0].id, json[0].counter)
       }
       throw new Error(response.statusText)
     } catch (error) {
@@ -37,7 +27,7 @@ export class CounterOutputRestAdapter implements CounterOutput {
     }
   }
 
-  public async updateCounter(counter: number): Promise<number> {
+  public async updateCounter(newCounter: Counter): Promise<Counter> {
     // eslint-disable-next-line no-useless-catch
     try {
       const response = await this.client(this._createUrl(`/counter/1`), {
@@ -46,14 +36,14 @@ export class CounterOutputRestAdapter implements CounterOutput {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          counter,
+          counter: newCounter.counter,
           id: 1
         })
       })
 
       if (response.ok) {
         const json = await response.json()
-        return json.counter
+        return new Counter(json.id, json.counter)
       }
       throw new Error(response.statusText)
     } catch (error) {

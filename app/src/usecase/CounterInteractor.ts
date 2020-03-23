@@ -1,23 +1,30 @@
 import { CounterInput } from './CounterInput'
+import { Counter } from '../entity'
 
-export interface CounterOutput {
-  getCounter(): Promise<number>
-  updateCounter(counter: number): Promise<number>
+export interface CounterService {
+  getCounter(): Promise<Counter>
+  updateCounter(counter: Counter): Promise<Counter>
 }
 
 export class CounterInteractor implements CounterInput {
-  client: CounterOutput
+  counterService: CounterService
 
-  constructor(client: CounterOutput) {
-    this.client = client
+  constructor(counterService: CounterService) {
+    this.counterService = counterService
   }
 
   async getCounter(): Promise<number> {
-    return await this.client.getCounter()
+    const newCounter: Counter = await this.counterService.getCounter()
+    return newCounter.counter
   }
 
   async increment(): Promise<number> {
-    const currentCounter: number = await this.getCounter()
-    return await this.client.updateCounter(currentCounter + 1)
+    const currentCounter: Counter = await this.counterService.getCounter()
+    const newCounter: Counter = new Counter(1, currentCounter.counter + 1)
+    const resultCounter: Counter = await this.counterService.updateCounter(
+      newCounter
+    )
+
+    return resultCounter.counter
   }
 }
