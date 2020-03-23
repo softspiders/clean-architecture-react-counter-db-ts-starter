@@ -23,13 +23,9 @@ UNDER DEVELOPMENT
 
 [Alexander Lapygin](https://github.com/AlexanderLapygin) <<alexanderlapygin@gmail.com>> - adaptation for [Soft Spiders](https://github.com/softspiders/softspiders)
 
-## Inspired by
-
-[Kentaro Matsushita's *clean-architecture-todo-example*](https://github.com/kentaro-m/clean-architecture-todo-example)
+---
 
 # Clean Architecture CounterView Example
-
----
 
 TBD
 
