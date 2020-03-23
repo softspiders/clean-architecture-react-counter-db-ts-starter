@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import * as serviceWorker from './serviceWorker'
 import { CounterOutRestAdapter } from './adapter'
-import { CounterInteractor } from './usecase'
+import { CounterInteractor } from './domain/usecase'
 import App from './react/view/App'
 
 const restClient = new CounterOutRestAdapter('http://localhost:3001')

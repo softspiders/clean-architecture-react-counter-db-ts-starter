@@ -1,6 +1,6 @@
 import fetch from 'unfetch'
-import { CounterOut } from '../usecase'
-import { Counter } from '../entity'
+import { CounterOut } from '../domain/usecase'
+import { Counter } from '../domain/entity'
 
 export class CounterOutRestAdapter implements CounterOut {
   endpoint: string
