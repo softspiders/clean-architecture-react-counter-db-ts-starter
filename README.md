@@ -1,7 +1,7 @@
 [SOFTSPIDERS](https://github.com/softspiders/softspiders)
 
 # clean-architecture-react-counter-db-ts-starter
-Starter for Counter App on *React* in *TypeScript* that follows *Clean Architecture* principle
+Starter for persistent Counter App on *React* in *TypeScript* that follows *Clean Architecture* principle
 
 UNDER DEVELOPMENT
 
