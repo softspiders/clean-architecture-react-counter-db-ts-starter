@@ -1,5 +1,9 @@
-import { CounterIn } from './CounterIn'
 import { Counter } from '../entity'
+
+export interface CounterIn {
+  getCounter(): Promise<number>
+  increment(): Promise<number>
+}
 
 export interface CounterOut {
   getCounter(): Promise<Counter>
