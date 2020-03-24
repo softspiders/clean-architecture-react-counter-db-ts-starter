@@ -1,6 +1,6 @@
 [SOFTSPIDERS](https://github.com/softspiders/softspiders)
 
-# clean-architecture-react-counter-ts-starter
+# clean-architecture-react-counter-db-ts-starter
 Starter for Counter App on *React* in *TypeScript* that follows *Clean Architecture* principle
 
 UNDER DEVELOPMENT
@@ -11,6 +11,7 @@ UNDER DEVELOPMENT
 
 - clean-architecture
 - counter-app
+- db
 - jest
 - react
 - rest
@@ -25,17 +26,15 @@ UNDER DEVELOPMENT
 [Alexander Lapygin](https://github.com/AlexanderLapygin) <<alexanderlapygin@gmail.com>> - adaptation for [Soft Spiders](https://github.com/softspiders/softspiders)
 
 ---
+## Inspired by
 
-# Clean Architecture on Counter App Example
+- [Eduardo Moroni](https://github.com/eduardomoroni)'s [*react-clean-architecture*](https://github.com/eduardomoroni/react-clean-architecture)
+- [Kentaro Matsushita](https://github.com/kentaro-m)'s [*clean-architecture-todo-example*](https://github.com/kentaro-m/clean-architecture-todo-example)
 
-TBD
-
-## Feature
-- Add a task
-- Complete a task
-- Delete a task
+---
 
 ## Usage
+
 ```sh
 # API
 cd api
