@@ -21,7 +21,7 @@ UNDER DEVELOPMENT
 
 ---
 ## Parents
-[**-db, rest**](https://github.com/softspiders/clean-architecture-counter-react-ts-starter)
+[**- db, rest**](https://github.com/softspiders/clean-architecture-counter-react-ts-starter)
 
 ---
 ## Author
