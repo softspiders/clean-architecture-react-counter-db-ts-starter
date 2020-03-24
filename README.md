@@ -23,7 +23,7 @@ UNDER DEVELOPMENT
 
 ## Author
 
-[Alexander Lapygin](https://github.com/AlexanderLapygin) <<alexanderlapygin@gmail.com>> - adaptation for [Soft Spiders](https://github.com/softspiders/softspiders)
+[Alexander Lapygin](https://github.com/AlexanderLapygin) <<alexanderlapygin@gmail.com>>
 
 ---
 ## Inspired by
